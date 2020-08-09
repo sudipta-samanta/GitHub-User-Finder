@@ -3,7 +3,21 @@
 	padding: 0;
 	box-sizing: border-box;
 	/*font-family: 'Lato', sans-serif;*/
-	font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+	background-color: #fff;
+	color: #555;
+	font-family: 'Roboto', 'Arial', sans-serif;
+	/* font-weight: 300;
+	font-size: 20px; */
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
 }
 
 header,
@@ -17,7 +31,12 @@ footer {
 
 footer {
 	text-align: center;
+	/*position: fixed;*/
+	bottom: 0px;
+	width: 100%;
 	margin-top: 30px;
+	background-color: #333;
+	color: white;
 }
 
 main {
@@ -93,18 +112,23 @@ footer span {
 	margin-left: 2%;
 }
 
-.profile-img a:link,
-.profile-img a:active,
-.profile-img a:visited {
-	margin: 10px 0px 10px 20%;
+.profile-img a {
+	margin: auto;
 	width: 120px;
 	padding: 5px;
 	border-radius: 10px;
 	background-color: #51565a;
 	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+.profile-img a:link,
+.profile-img a:active,
+.profile-img a:visited {
 	text-decoration: none;
 	display: block;
 	text-align: center;
+	/*font-size: 80%;*/
 }
 
 .profile-img a:hover {
@@ -126,7 +150,7 @@ footer span {
 .profile-details table {
 	border-collapse: collapse;
 	width: 90%;
-	margin: 10px 5%;
+	margin: 50px 5%;
 }
 
 .profile-details td {
@@ -135,7 +159,44 @@ footer span {
 	border-radius: 10px;
 }
 
+.profile-details ul {
+	width: 90%;
+	margin: 7px 0 10px 5%;
+}
+
 .profile-details li {
 	list-style-type: none;
 	display: inline;
+	background-color: royalblue;
+	border-radius: 5px;
+	padding: 2px;
+	font-size: 15px;
+	color: white;
+	margin-right: 4px;
+}
+
+.profile-details li:first-child {
+	background-color: seagreen;
+}
+
+.profile-details li:nth-child(2) {
+	background-color: rgb(26, 152, 202);
+}
+
+.profile-details li:last-child {
+	background-color: rgb(102, 93, 93);
+}
+
+@media only screen and (max-width: 962px) {
+	.profile-details li {
+		display: block;
+		width: 150px;
+		text-align: center;
+		margin-top: 5px;
+	}
+	.profile-details table {
+		border-collapse: collapse;
+		width: 90%;
+		margin: 5px 5% 10px 5%;
+	}
 }

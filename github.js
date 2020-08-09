@@ -1,7 +1,7 @@
 class GitHub {
 	constructor() {
-		this.client_id = '54e241d3f1301e164433';
-		this.client_secret = '4e355eb856e3a0291b09fcb40ca51ed71d09127b';
+		this.client_id = '<enter your github oauth client id>';
+		this.client_secret = '<enter your github oauth client secret>';
 	}
 
 	// get user data

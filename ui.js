@@ -35,7 +35,6 @@ class UI {
 					<div class="profile-details">
 						<ul>
 							<li>Public Repos: ${user.public_repos}</li>
-							<li>Public Gists: ${user.public_gists}</li>
 							<li>Followers: ${user.followers}</li>
 							<li>Following: ${user.following}</li>					
 						

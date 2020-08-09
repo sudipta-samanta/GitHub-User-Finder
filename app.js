@@ -13,6 +13,8 @@ document.querySelector('#github-username').addEventListener('keyup', (e) => {
 					// Show alert
 					ui.showAlert();
 				} else {
+					// clear alert
+					ui.clearAlert();
 					// Show profile
 					ui.showProfile(userProfileData);
 				}

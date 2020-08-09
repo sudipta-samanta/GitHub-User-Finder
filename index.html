@@ -4,10 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>GitHub User Finder</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,700;1,900&family=Roboto:ital,wght@0,300;0,900;1,400&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header>
-			<h1>Github User Finder</h1>
+			<h1>GitHub Finder</h1>
 		</header>
 		<main>
 			<div class="search-box">
@@ -15,18 +24,25 @@
 				<p>Enter an username to fetch user profile and repos</p>
 				<input
 					type="text"
-					placeholder="GitHub Username..."
+					placeholder="   GitHub Username..."
 					id="github-username"
 				/>
 			</div>
 			<div class="profile"></div>
 		</main>
 		<footer>
-			GitHub User Finder &copy; Using GitHub API
+			<p>
+				GitHub Finder &copy;<br />
+				<span
+					>Using GitHub API
+					<ion-icon name="logo-github" class="github-icon"></ion-icon
+				></span>
+			</p>
 		</footer>
 
 		<script src="github.js"></script>
 		<script src="ui.js"></script>
 		<script src="app.js"></script>
+		<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 	</body>
 </html>

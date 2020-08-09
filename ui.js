@@ -23,7 +23,7 @@ class UI {
 	showProfile(user) {
 		let output = `   
 			<div class="profile-section">       
-				<h2>${user.name}</h2>
+				<h2>${user.name == null ? 'N/A' : user.name}</h2>
 				<div class="profile-box">
 					<div class= "profile-img">
 						<img src="${user.avatar_url}"><br>
@@ -79,11 +79,6 @@ class UI {
 
 		const parentelement = document.querySelector('.search-box');
 		parentelement.appendChild(alertsection);
-
-		// Timeout after 2 sec
-		/* setTimeout(() => {
-			this.clearAlert();
-		}, 2000); */
 	}
 
 	// clear alert
@@ -92,5 +87,39 @@ class UI {
 		if (currentAlert) {
 			currentAlert.remove();
 		}
+	}
+
+	// show repos
+	showRepos(repos) {
+		//console.log(repos);
+		const reposSection = document.querySelector('.reposSection');
+		let output = `
+		<div class="repos">
+			<h2>Latest Repos</h2>
+		`;
+		if (repos.length === 0) {
+			output += '<p>No repository found</p>';
+		} else {
+			repos.forEach((repo) => {
+				output += `		
+				<div class="repos-list">
+					<ul>
+						<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>
+						<li>Stars: ${repo.stargazers_count}</li>
+						<li>Watchers: ${repo.watchers_count}</li>
+						<li>Forks: ${repo.forks_count}</li>
+					</ul>			
+				</div>			
+				`;
+			});
+		}
+		output += '</div>';
+		reposSection.innerHTML = output;
+		//this.addRepoListHoverEvent();
+	}
+
+	// clear repos section
+	clearRepos() {
+		document.querySelector('.repos').innerHTML = '';
 	}
 }

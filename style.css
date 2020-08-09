@@ -7,7 +7,6 @@
 
 html,
 body {
-	background-color: #fff;
 	color: #555;
 	font-family: 'Roboto', 'Arial', sans-serif;
 	/* font-weight: 300;
@@ -18,6 +17,7 @@ body {
 
 body {
 	position: relative;
+	background-color: rgb(238, 237, 237);
 }
 
 header,
@@ -52,6 +52,7 @@ main {
 	box-shadow: 0 2px 2px #909c96;
 	border-radius: 5px;
 	padding: 5%;
+	background-color: white;
 }
 
 .search-box h1 {
@@ -82,12 +83,18 @@ footer span {
 	font-size: 15px;
 }
 
-.profile-section {
+.profile {
+	background-color: white;
+}
+.profile-section,
+.repos {
 	border: 1px solid #576960;
 	border-radius: 5px;
+	margin-bottom: 15px;
 }
 
-.profile-section h2 {
+.profile-section h2,
+.repos h2 {
 	margin: 0px 0px 10px 0px;
 	display: block;
 	background-color: #5769604d;
@@ -133,12 +140,18 @@ footer span {
 
 .profile-img a:hover {
 	background-color: rgb(32, 34, 36);
-	transform: scale(1.15);
-	transition: transform 0.2s;
+	transition: background-color 0.5s;
 }
 
 .github-icon {
 	vertical-align: top;
+}
+
+.user-icon {
+	/*vertical-align: middle;*/
+	position: relative;
+	top: 6px;
+	font-size: 35px;
 }
 
 .profile-details {
@@ -185,6 +198,68 @@ footer span {
 
 .profile-details li:last-child {
 	background-color: rgb(102, 93, 93);
+}
+
+.repos h2 {
+	margin-bottom: 0px;
+}
+.repos-list {
+	/*border-bottom: 1px solid red;*/
+	padding: 10px;
+}
+
+.repos-list ul {
+	width: 100%;
+}
+
+.repos-list li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 0px;
+	text-align: center;
+}
+
+.repos-list li:first-child {
+	width: 24%;
+	padding-left: 5px;
+	text-align: left;
+}
+
+.repos-list li:nth-child(n + 2),
+.repos-list li:nth-child(n + 4) {
+	width: 22%;
+}
+
+.repos-list li:nth-child(n + 3) {
+	width: 24%;
+}
+
+.repos-list a:link,
+.repos-list a:visited {
+	text-decoration: none;
+	color: #202525;
+	padding: 0px 10px;
+}
+
+.repos-list a:hover {
+	color: azure;
+	font-weight: bold;
+	transition: font-weight 0.2s;
+}
+
+.repos-list:hover {
+	background-color: #51565a;
+	color: azure;
+	transition: background-color 0.4s, color 0.4s;
+}
+
+.repos-list:not(:last-child) {
+	border-bottom: 1px solid #b5bec5;
+}
+
+.repos p {
+	padding: 5px;
+	text-align: center;
 }
 
 @media only screen and (max-width: 962px) {

@@ -1,7 +1,7 @@
 class GitHub {
 	constructor() {
 		this.client_id = '<enter your github oauth client id>';
-		this.client_secret = '<enter your github oauth client secret>';
+		this.client_secret = '<enter your github oauth client secret';
 	}
 
 	// get user data
@@ -13,5 +13,15 @@ class GitHub {
 		const userProfileData = await userProfile.json();
 
 		return userProfileData;
+	}
+
+	// show repos
+	async getRepos(repoUrl, count = 5) {
+		const reposPromise = await fetch(
+			`${repoUrl}?per_page=${count}&sort="created:asc"&${this.client_id}&client_secret=${this.client_secret}`
+		);
+		const repos = await reposPromise.json();
+		//console.log(repos);
+		return repos;
 	}
 }

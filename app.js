@@ -17,11 +17,18 @@ document.querySelector('#github-username').addEventListener('keyup', (e) => {
 					ui.clearAlert();
 					// Show profile
 					ui.showProfile(userProfileData);
+					// show latest 5 repos
+					github
+						.getRepos(userProfileData.repos_url, 5)
+						.then((repos) => ui.showRepos(repos))
+						.catch((err) => console.log(`Something went wrong: ${err}`));
 				}
 			})
-			.catch();
+			.catch((err) => console.log(`Something went wrong: ${err}`));
 	} else {
 		// clear profile
 		ui.clearProfile();
+		// clear repos
+		ui.clearRepos();
 	}
 });

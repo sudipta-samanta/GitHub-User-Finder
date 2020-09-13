@@ -24,37 +24,31 @@ class UI {
 		let output = `   
 			<div class="profile-section">       
 				<h2>${user.name == null ? 'N/A' : user.name}</h2>
-				<div class="profile-box">
-					<div class= "profile-img">
-						<img src="${user.avatar_url}"><br>
-						<a href="${
-							user.html_url
-						}" target="_blank"><ion-icon name="logo-github" class="github-icon"></ion-icon
-						>  Visit Profile</a>
+				<div class="profile-box-container">
+					<div class= "profile-img-section">
+						<div class="profile-img-section-items">
+							<img src="${user.avatar_url}">
+						</div>
+						<div class="profile-img-section-items">
+							
+							<p>
+								<strong>${user.company == null ? 'N/A' : user.company}</strong>
+							</p>
+							<p>${user.location == null ? 'N/A' : user.location}</p>
+				
+							<a href="${
+								user.html_url
+							}" target="_blank"><ion-icon name="logo-github" class="github-icon"></ion-icon
+							>  Visit Profile</a>
+						</div>						
 					</div>
-					<div class="profile-details">
+					<div class="repo-follower-following-section">
 						<ul>
 							<li>Public Repos: ${user.public_repos}</li>
 							<li>Followers: ${user.followers}</li>
 							<li>Following: ${user.following}</li>					
 						
-						</ul>
-						<table>
-							<tr>
-								<td>Company: <strong>${
-									user.company == null ? 'N/A' : user.company
-								}</strong></td>
-							</tr>
-							<tr>
-								<td>Location: ${user.location == null ? 'N/A' : user.location}</td>
-							</tr>
-							<tr>
-								<td>Member since: ${month[new Date(user.created_at).getMonth()]}, ${new Date(
-			user.created_at
-		).getFullYear()}</td>
-							</tr>
-						</table>
-					
+						</ul>	
 					</div>
 				</div> 
 			</div>          
@@ -91,7 +85,7 @@ class UI {
 
 	// show repos
 	showRepos(repos) {
-		//console.log(repos);
+		console.log(repos);
 		const reposSection = document.querySelector('.reposSection');
 		let output = `
 		<div class="repos">
@@ -104,10 +98,14 @@ class UI {
 				output += `		
 				<div class="repos-list">
 					<ul>
-						<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>
+						<li>${repo.name}</li>
 						<li>Stars: ${repo.stargazers_count}</li>
-						<li>Watchers: ${repo.watchers_count}</li>
 						<li>Forks: ${repo.forks_count}</li>
+						<li>
+							<a href="${repo.html_url}" target="_blank">
+								<ion-icon name="arrow-forward-outline" class="repo-link"></ion-icon>
+							</a>
+						</li>
 					</ul>			
 				</div>			
 				`;

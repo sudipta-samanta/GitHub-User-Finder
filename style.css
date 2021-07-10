@@ -8,7 +8,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+html{
+	height: 100%;
+}
 html,
 body {
 	color: #555;
@@ -16,12 +18,15 @@ body {
 	/* font-weight: 300;
 	font-size: 20px; */
 	text-rendering: optimizeLegibility;
-	overflow-x: hidden;
+	overflow-x: hidden;	
 }
 
 body {
 	position: relative;
 	background-color: rgb(238, 237, 237);
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 header,
@@ -34,20 +39,18 @@ footer {
 	display: flex;
 	align-items: center;
 }
-footer {
-	justify-content: center;
-}
 
 header h1 {
 	margin-left: 10px;
 }
 
 footer {
+	justify-content: center;
 	text-align: center;
 	/*position: fixed;*/
 	bottom: 0px;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: auto;
 	background-color: #333;
 	color: white;
 }
